@@ -26,15 +26,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/search.css">
+<link rel="stylesheet" href="./css/common.css">
 <link rel="shortcut icon" href="">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="header">
         <ul class="clearfix">
-            <li id="header_menu"><a href="/">メニュー</a></li>
-            <li id="header_logo"><span>ロゴ</span></li>
-            <li id="header_setting"><a href="/">設定</a></li>
+            <li id="header_menu"><a href="/"><img src="./img/icon_menu.png" alt="メニューボタン" /></a></li>
+            <li id="header_logo"><img src="./img/header_logo.png" alt="スマートまな板 ヘッダー" /></li>
+            <li id="header_setting"><a href="/"><img src="./img/icon_haguruma.png" alt="設定メニュー" /></a></li>
         </ul>
     </div>
     <div id="input_area">
@@ -85,7 +86,7 @@
 ?>
     </div>
 </body>
-
+</html>
 
 
 <?php

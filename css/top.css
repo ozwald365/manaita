@@ -1,0 +1,38 @@
+h1#main_title {
+	margin: 0px auto;
+	margin-top:74px;
+	width:960px;
+	height:238px;
+}
+
+div#top_menu_area {
+	margin:0px auto;
+	width:960px;
+	height:352px;
+	/*background-color:#AAAAAA;*/
+}
+
+#top_menu_area ul {
+	list-style:none;
+}
+
+.top_menu, .top_menu_right {
+	display:block;
+	float:left;
+	width:180px;
+	height:161px;
+}
+
+.top_menu a, .top_menu_right a{
+	display:block;
+}
+
+.top_menu {
+	margin-right:15px;
+	margin-bottom:15px;
+}
+
+.top_menu_right {
+	margin-bottom:15px;
+}
+
