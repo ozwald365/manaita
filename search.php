@@ -40,7 +40,7 @@
     </div>
     <div id="input_area">
         <form action="<?php echo basename(__FILE__); ?>" method="GET">
-            <input type="text" name="keyword" />
+            <input type="text" name="keyword" value="<?php echo $keyword; ?>"/>
             <input type="hidden" name="page" value="1" />
             <?php // 今はgoogle一択 ?>
             <input type="hidden" name="type" value="google" />
@@ -74,16 +74,18 @@
 ?>    
     </div>
     <div id="pager_area" class="clearfix">
+        <ul class="clearfix">
 <?php
     $next_url = get_next_page_url();
     $prev_url = get_prev_page_url();
     if ($prev_url) {
-        echo '<a id="prev_page" href="' . $prev_url . '">前へ</a>';
+        echo '<li id="prev_page"><a href="' . $prev_url . '">前へ</a></li>';
     } else {
-        echo '<p id="prev_page_disable">前へ</p>';
+        echo '<li id="prev_page_disable"><p>前へ</p><li>';
     }
-    echo '<a id="next_page" href="' . $next_url . '">次へ</a>';
+    echo '<li id="next_page"><a href="' . $next_url . '">次へ</a></li>';
 ?>
+        </ul>
     </div>
 </body>
 </html>
@@ -121,27 +123,40 @@ EOS;
 }
 
 function get_next_page_url() {
-    global $keyword, $page, $type;
+    global $keyword, $page_num, $type;
+    $page = $page_num + 1;
 
-    $next_page = sprintf(get_search_url_base(), $keyword, $page + 1, $type);
+    $url_base = get_search_url_base();
+    $next_page = sprintf($url_base, $keyword, $page, $type);
 
     return $next_page;
 }
 
 function get_prev_page_url() {
-    global $keyword, $page, $type;
+    global $keyword, $page_num, $type;
+    $page = $page_num - 1;
 
     if ($page <= 0) {
         return null;
     }
 
-    $prev_page = sprintf(get_search_url_base(), $keyword, $page - 1, $type);
+    $url_base = get_search_url_base();
+    $prev_page = sprintf($url_base, $keyword, $page, $type);
 
     return $prev_page;
 }
 
 function get_search_url_base() {
-    return $current_url = ((empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]) . '?keyword=%s&page=%s&type=%s';
+    $url_base = '';
+    if(empty($_SERVER["HTTPS"])) {
+        $url_base = "http://";
+    } else {
+        $url_base = "https://";
+    }
+    
+    $url_base .= $_SERVER["HTTP_HOST"] . $_SERVER["SCRIPT_NAME"] . '?keyword=%s&page=%s&type=%s';
+
+    return $url_base;
 }
 
 ?>

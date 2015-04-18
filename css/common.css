@@ -9,7 +9,7 @@ html {
 
 body {
     width:1024px;
-    height:100%;
+    max-height:1000px;
     margin: 0px auto;
     background-color:#FFFFFF;
 	/*background-color:#FFFF00;*/
@@ -18,7 +18,7 @@ body {
 #header {
     background-color:#F1B500;
     width: 100%;
-    height: 65px;
+    height: 87px;
 }
 
 #header ul {
@@ -33,26 +33,30 @@ body {
 
 #header_menu {
     float: left;
-	width: 20%;
+	width: 18%;
     min-width: 60px;
     height: 60px;
+    margin-top:10px;
+    margin-left: 2%;
 }
 
 #header_logo {
     float: left;
 	width: 60%;
     min-width: 366px;
-	margin: 4px 0px 3px 0px;
+	margin: 14px 0px 3px 0px;
     height: 53px;
     text-align: center;
 }
 
 #header_setting {
     float: right;
-	width: 20%;
+	width: 18%;
     min-width:60px;
     height:60px;
 	text-align:right;
+    margin-top:10px;
+    margin-right:2%;
 }
 
 .clearfix:after{

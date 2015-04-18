@@ -1,0 +1,27 @@
+h1#main_title {
+	margin: 0px auto;
+	margin-top:50px;
+	width:960px;
+	height:348px;
+}
+
+#button_area {
+    width:960px;
+    height:168px;
+    margin:0px auto;
+    text-align:center;
+}
+
+#button_area a {
+    display:block;
+    width:546px;
+    height:168px;
+    margin:0px auto;
+}
+
+#check_description {
+    width:960px;
+    height:168px;
+    margin:0px auto;
+    margin-bottom:30px;
+}

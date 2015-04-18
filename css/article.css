@@ -1,0 +1,42 @@
+#article {
+    width:960px;
+    min-height:768px;
+    margin:0px auto;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+
+h1#article_title {
+    width:945px;
+    height:40px;
+    padding-left:10px;
+    padding-top:7px;
+    font-size:35px;
+    border-left:solid 10px #FF0000;
+}
+
+.movie_content {
+    width:960px;
+    margin: 25px 0px 25px 0px;
+    text-align:center;
+}
+
+.article_heading {
+    width:950px;
+    height:35px;
+    padding-left:10px;
+    padding-top:10px;
+    text-size:20px;
+}
+
+.green {
+    background-color:#228B22;
+    color:#FFFFFF;
+}
+
+.article_content {
+    width:956px;
+    padding:10px 2px;
+}
+

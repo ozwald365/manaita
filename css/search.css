@@ -69,6 +69,12 @@
     height:5%;
 }
 
+#pager_area ul {
+    width:100%;
+    height:100%;
+    list-style:none;
+}
+
 #prev_page,#prev_page_disable {
     display:block;
     float:left;
@@ -76,6 +82,7 @@
     height:100%;
     text-align:left;
 }
+
 
 #prev_page_disable {
     color:#999999;
@@ -87,6 +94,9 @@
     width:50%;
     height:100%;
     text-align:right;
+}
+
+#prev_page a, #next_page a {
 }
 
 .clearfix:after{
