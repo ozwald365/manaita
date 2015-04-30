@@ -30,7 +30,7 @@
 
 #result_area {
     width: 100%;
-    height: 70%;
+    height: 564px;
     overflow:scroll;
     overflow-x: hidden;
     /* background-color:#F0F0F0; */
@@ -46,12 +46,13 @@
 
 #result_area h3 {
     width: 100%;
-    margin: 10px 5px 10px 10px;
+    margin: 10px 5px 10px 0px;
 }
 
 #result_area .thumnail {
     display: block;
-    margin: 10px 30px;
+    margin: 10px 0px;
+    margin-right:30px;
     width: 100px;
     height: 100px;
     float: left;
@@ -98,16 +99,4 @@
 
 #prev_page a, #next_page a {
 }
-
-.clearfix:after{
-    content: "."; 
-    display: block; 
-    height: 0; 
-    font-size:0;
-    clear: both; 
-    visibility:hidden;
-}
-
-.clearfix{display: inline-block;} 
-
 

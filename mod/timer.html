@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-    <title>�X�}�[�g�܂Ȕ�timer</title>
-
+    <title>スマートまな板timer</title>
+        <meta charset="utf-8">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <script type="text/javascript" src="js/TimeCircles.js"></script>
-        <link rel="stylesheet" href="./css/common.css">
-		<link rel="stylesheet" href="./css/top.css">
-        <link rel="stylesheet" href="css/TimeCircles.css" />
-        <link rel="stylesheet" href="jquery.calculator.css">
-		<script src="js/jquery.plugin.js"></script>
-		<script src="js/jquery.calculator.js"></script>
+        <script type="text/javascript" src="../js/TimeCircles.js"></script>
+        <link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/top.css">
+        <link rel="stylesheet" href="../css/TimeCircles.css" />
+        <link rel="stylesheet" href="../jquery.calculator.css">
+		<script src="../js/jquery.plugin.js"></script>
+		<script src="../js/jquery.calculator.js"></script>
 		<script>
 		$(function () {
-		$.calculator.setDefaults({showOn: 'both', buttonImageOnly: true, buttonImage: 'img/calculator.png'});
+		$.calculator.setDefaults({showOn: 'both', buttonImageOnly: true, buttonImage: '../img/calculator.png'});
 		$('#basicCalculator').calculator();
 		$('#sciCalculator').calculator({layout: $.calculator.scientificLayout});
 		});
@@ -22,18 +22,18 @@
     </head>
     <body>
     <div id="header">
+        <ul class="clearfix">
+            <li id="header_menu"><a href="/"><img src="../img/icon_menu.png" alt="メニューボタン" /></a></li>
+            <li id="header_logo"><img src="../img/header_logo.png" alt="スマートまな板 ヘッダー" /></li>
+            <li id="header_setting"><a href="/"><img src="../img/icon_haguruma.png" alt="設定メニュー" /></a></li>
+        </ul>
     </div>
-	<h1 id="main_title"><img src="./img/logo.png" alt="�X�}�[�g�܂Ȕ�" /></h1>
-
+	<h1 id="main_title"><img src="../img/timer.png" alt="スマートまな板" /></h1>
         <div class="container">
-
-            <hr>
             <div id="CountDownTimer" data-timer="60" style="width:100%; height:100%;"></div>
-            <button class="btn btn-success startTimer">�X�^�[�g</button>
-            <button class="btn btn-danger stopTimer">�X�g�b�v</button>
-            <button class="btn btn-danger resetTimer">���Z�b�g</button>
-            <hr>
-            
+            <button class="btn btn-success startTimer">スタート</button>
+            <button class="btn btn-danger stopTimer">ストップ</button>
+            <button class="btn btn-danger resetTimer">リセット</button>
         </div>
         <script>
             $("#CountDownTimer").TimeCircles({ time: { Days: { show: false }, Hours: { show: false } }});
@@ -48,7 +48,7 @@
             $(".resetTimer").click(function() {
                 $("#CountDownTimer").TimeCircles().restart();
             });
-
+        
         </script>
 <p><input type="text" id="basicCalculator"></p>
 

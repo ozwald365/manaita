@@ -29,7 +29,7 @@ class Search {
 
         $url = sprintf(self::GGL_URL_FORMAT, $keyword, $inurl, $start_num);
         // googleはsjis…?
-        $body = mb_convert_encoding(file_get_contents($url), 'UTF-8', 'SJIS');
+        $body = mb_convert_encoding(self::call_curl($url), 'UTF-8', 'SJIS');
 
         $google_result = new Google();
         $google_result->parse($body);
@@ -40,6 +40,18 @@ class Search {
     private static function pagenum2startnum($page_num) {
         $start_num = $page_num * 10;
         return ($start_num == 0) ? 1 : $start_num;
+    }
+
+    private static function call_curl($url) {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $body = curl_exec($ch);
+        curl_close($ch);
+
+        return $body;
     }
 }
 

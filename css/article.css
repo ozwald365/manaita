@@ -16,12 +16,6 @@ h1#article_title {
     border-left:solid 10px #FF0000;
 }
 
-.movie_content {
-    width:960px;
-    margin: 25px 0px 25px 0px;
-    text-align:center;
-}
-
 .article_heading {
     width:950px;
     height:35px;

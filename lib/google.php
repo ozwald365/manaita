@@ -31,7 +31,7 @@ class Google extends SearchResult {
 
             $content_info['title'] = $pq_ires->find('h3.r a')->text();
             $content_info['description'] = $pq_ires->find('span.st')->html();
-            $content_info['url'] = $pq_ires->find('div.kv')->text();
+            $content_info['url'] = preg_replace('/類似ページ/', '', $pq_ires->find('div.kv')->text());
 
             $contents[] = $content_info;
         }

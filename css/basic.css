@@ -1,0 +1,10 @@
+.movie_content {
+    width:960px;
+    margin: 25px 0px 25px 0px;
+    text-align:center;
+}
+
+#movie_content video {
+    width:960px;
+    height:546px;
+}

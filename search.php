@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="./css/common.css">
 <link rel="shortcut icon" href="">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.ostwald365.com/manaita/js/jquery.xdomainajax.js"></script>
+<script type="text/javascript" src="http://www.ostwald365.com/manaita/js/thumbnail.js"></script>
 </head>
 <body>
     <div id="header">
@@ -47,7 +49,7 @@
             <input type="submit" name="run" value="検索" />
         </form>
         <div id="relations" class="clearfix">
-            <img id="relation_icon" src="http://placehold.jp/30x30.png" alt="ダミー" />
+            <img id="relation_icon" src="./img/icon_search.png" alt="ダミー" />
 <?php
     $relation_url_base = get_search_url_base();
     foreach($search_result->get_all_relations() as $rel) {
@@ -62,7 +64,8 @@
         $url = 'http://' . $content['url'];
 
         $title = '<h3><a href="%s">%s</a></h3>';
-        $thumnail = '<a href="%s" class="thumnail" ><img src="http://placehold.jp/100x100.png" alt="ダミー" /></a>';
+        //$thumnail = '<a href="%s" class="thumnail" ><img src="http://placehold.jp/100x100.png" alt="ダミー" /></a>';
+        $thumnail = '<a href="%s" class="thumnail" ></a>';
         $descliption = '<p class="desc">%s</p>';
 
         echo '<div class="content clearfix">';
@@ -79,11 +82,11 @@
     $next_url = get_next_page_url();
     $prev_url = get_prev_page_url();
     if ($prev_url) {
-        echo '<li id="prev_page"><a href="' . $prev_url . '">前へ</a></li>';
+        echo '<li id="prev_page"><a href="' . $prev_url . '"><img src="./img/cooking_btn_back.png" alt="前へ" /></a></li>';
     } else {
-        echo '<li id="prev_page_disable"><p>前へ</p><li>';
+        echo '<li id="prev_page_disable"><p><img src="./img/cooking_btn_back.png" alt="前へ" /></p><li>';
     }
-    echo '<li id="next_page"><a href="' . $next_url . '">次へ</a></li>';
+    echo '<li id="next_page"><a href="' . $next_url . '"><img src="./img/cooking_btn_next.png" alt="次へ" /></a></li>';
 ?>
         </ul>
     </div>

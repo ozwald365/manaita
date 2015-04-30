@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>まな板</title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<link rel="shortcut icon" href="">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="input_area">
+    <form action="./index.html" method="GET">
+        <input type="text" name="keyword" />
+        <input type="submit" name="run" onClick="javascript:void(0)" value="検索" />
+    </form>
+</div>
+<div id="result_area">
+    
+</div>
+</body>
+<script>
+
+var keyword_selector = $("input[type=text][name=keyword]");
+var search_url_format = "http://192.168.179.51/manaita/get.php?keyword=<%keyword%>&type=google"
+
+$("input[type=submit][name=run]").on("click", function(e) {
+    var keyword = keyword_selector.val();
+    var url = search_url_format.replace("<%keyword%>", keyword);
+    console.log("url:" + url);
+    var ajax_option = {
+        url: url,
+        type: "GET",
+        timeout: 10000,
+        datatype: "json",
+        cache: true,
+    };
+
+    $.ajax(ajax_option).done(function(data, textStatus, jqXHR) {
+        //console.log($.parseJSON(data));
+
+        var json_obj = $.parseJSON(data);
+
+
+
+    });
+
+    return false;
+});
+
+
+</script>
+</html>

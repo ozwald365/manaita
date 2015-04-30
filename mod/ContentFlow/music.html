@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <link rel="stylesheet" title="Standard" href="styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../css/common.css">
+
+    <script language="JavaScript" type="text/javascript" src="contentflow.js"></script>
+    <script type="text/javascript">
+        var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
+    </script>
+</head>
+<body>
+    <div id="header">
+        <ul class="clearfix">
+            <li id="header_menu"><a href="/"><img src="../../img/icon_menu.png" alt="メニューボタン" /></a></li>
+            <li id="header_logo"><img src="../../img/header_logo.png" alt="スマートまな板 ヘッダー" /></li>
+            <li id="header_setting"><a href="/"><img src="../../img/icon_haguruma.png" alt="設定メニュー" /></a></li>
+        </ul>
+    </div>
+         <audio id="aiko">
+         <source src="music/aiko.mp3">
+        </audio><br>
+        <audio id="exile">
+         <source src="music/exile.mp3">
+        </audio><br>
+                <audio id="ikimono">
+         <source src="music/ikimono.mp3">
+        </audio><br>
+                <audio id="nishino">
+         <source src="music/nishino.mp3">
+        </audio><br>
+<script type="text/javascript">
+function aiko_play() {
+   exile.pause();
+   ikimono.pause();
+   nishino.pause();
+   aiko.play();
+}
+
+function exile_play() {
+   exile.play();
+   ikimono.pause();
+   nishino.pause();
+   aiko.pause();
+}
+
+function ikimono_play() {
+   ikimono.play();
+   exile.pause();
+   nishino.pause();
+   aiko.pause();
+}
+
+function nishino_play() {
+   nishino.play();
+   ikimono.pause();
+   exile.pause();
+   aiko.pause();
+}
+</script>
+
+    <h1 id="title"><img src="../../img/music.png"/></h1>
+    
+    <div class="maincontent">
+
+    <div id="contentFlow" class="ContentFlow">
+        <!-- should be place before flow so that contained images will be loaded first -->
+        <div class="loadIndicator"><div class="indicator"></div></div>
+
+        <div class="flow">
+
+            <div class="item">
+                <img class="content" src="pics/ikimono.jpg" onclick="ikimono_play()" />
+                <div class="caption">いきものがかり</div>
+            </div>
+            <div class="item">
+                <img class="content" src="pics/aiko.jpg" onclick="aiko_play()"/>
+                <div class="caption">あいこ</div>
+            </div>
+            <div class="item">
+                <img class="content" src="pics/exile.jpg" onclick="exile_play()"/>
+                <div class="caption">Exile</div>
+            </div>
+            <div class="item">
+                <img class="content" src="pics/nishino.jpg" onclick="nishino_play()"/>
+                <div class="caption">西野かな</div>
+            </div>
+
+        </div>
+        <div class="globalCaption"></div>
+        <div class="scrollbar">
+            <div class="slider"><div class="position"></div></div>
+        </div>
+
+
+
+</body>
+</html>

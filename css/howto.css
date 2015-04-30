@@ -1,0 +1,22 @@
+#main_tittle {
+    width:960px;
+    height:272px;
+    margin:0px auto;
+}
+
+#howto_img_area {
+    width:960px;
+    height:1485px;
+    margin:0px auto;
+}
+
+#howto_img_area ul {
+    list-style:none;
+}
+
+#howto_img_area ul li {
+    display:block;
+    float:left;
+    width:480px;
+    height:297px;
+}
